@@ -1,0 +1,176 @@
+<!--pages/order-detail/order-detail.wxml-->
+<import src="../../templates/order-cart-list.wxml" />
+
+<view wx:if="{{order != null}}" class="container order-detail">
+
+    <!-- 订单状态开始 -->
+    <view class="order-status">
+        <text>{{order_status}}</text>
+    </view>
+    <!-- 订单状态结束 -->
+
+    <!-- 物流信息开始 -->
+    <view wx:if="{{order.shipper != ''}}" class="order-shipping popup-btn" bindtap="goShippingDetail">
+        <view class="icon">
+            <image src="../../images/deliver_light.png"></image>
+        </view>
+        <view class="button-main">
+            <!-- 有物流信息则显示最后一条信息 -->
+            <block wx:if="{{order.shipping_detail.shipping.length > 0}}">
+                <view class="shipping-detail">
+                    <text>{{order.shipping_detail.shipping[0].AcceptStation}}</text>
+                </view>
+                <view class="time">
+                    <text>{{order.shipping_detail.shipping[0].AcceptTime}}</text>
+                </view>
+            </block>
+            <!-- 无物流信息则显示物流公司和单号 -->
+            <block wx:else>
+                <view class="shipper" data-code="{{order.shipper.code}}">
+                    <view class="shipper-icon">
+                        <image src="../../images/shipper-{{order.shipper.shipper_slug}}.png"></image>
+                    </view>
+                    <view class="shipper-detail">
+                        <view class="name">
+                            <text>{{order.shipper.shipper_name}}</text>
+                        </view>
+                        <view class="code">
+                            <text>{{order.shipper.code}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="go-shipping-detail">
+            <image src="../../images/go_light.png"></image>
+        </view>
+    </view>
+    <!-- 物流信息结束 -->
+
+    <!-- 收货地址开始 -->
+    <view class="select-address popup-btn">
+        <view class="icon">
+            <image src="../../images/location_light.png"></image>
+        </view>
+        <view class="button-main">
+            <view class="customer-info">
+                <text>{{order.billing.first_name}}</text>
+                <text>{{order.billing.phone}}</text>
+            </view>
+            <view class="address">
+                <text>{{province}}</text>
+                <text>{{order.billing.city}}</text>
+                <text>{{order.billing.address_1}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 收货地址结束 -->
+
+    <!-- 买家留言开始 -->
+    <view wx:if="{{order.customer_note != ''}}" class="order-comment">
+        <view class="icon">
+            <image src="../../images/comment_light.png"></image>
+        </view>
+        <view>
+            <text>{{order.customer_note}}</text>
+        </view>
+    </view>
+    <!-- 买家留言结束 -->
+
+    <!-- 商家留言开始 -->
+    <view wx:if="{{order.manager_notes.length > 0}}" class="manager-comment">
+        <view class="icon">
+            <image src="../../images/about.png"></image>
+        </view>
+        <view class="comment-list">
+            <block wx:for="{{order.manager_notes}}">
+                <view class="comment">
+                    <text class="comment-text">{{item.comment_content}}</text>
+                    <text class="comment-date">{{item.comment_date}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!-- 商家留言结束 -->
+
+    <!-- 购物车列表开始 -->
+    <template is="order-cart-list" data="{{line_items: order.line_items, currency: currency}}"></template>
+    <!-- 购物车列表结束 -->
+
+    <!-- 价格详情开始 -->
+    <view class="price-detail">
+        <view class="detail-row subtotal">
+            <text class="detail-name">小计</text>
+            <text class="detail-value"><text class="currency">{{currency}}</text>
+            <text>{{order.subtotal}}</text></text>
+        </view>
+        <block wx:for="{{order.coupon_lines}}">
+            <view class="detail-row discount">
+                <text class="detail-name">优惠券</text>
+                <text class="detail-value">-<text class="currency">{{currency}}</text>
+                <text>{{item.discount}}</text></text>
+            </view>
+        </block>
+        <block wx:for="{{order.fee_lines}}">
+            <view class="detail-row fee">
+                <text class="detail-name">手续费</text>
+                <text class="detail-value"><text class="currency">{{currency}}</text>
+                <text>{{item.total}}</text>
+                </text>
+            </view>
+        </block>
+        <block wx:for="{{order.shipping_lines}}">
+            <view class="detail-row shipping">
+                <text class="detail-name">运费</text>
+                <text class="detail-value"><text class="currency">{{currency}}</text>
+                <text>{{item.total}}</text>
+                </text>
+            </view>
+        </block>
+    </view>
+    <!-- 价格详情结束 -->
+
+    <!-- 实付金额开始 -->
+    <view class="order-total product-price">
+        <text class="order-total-text">合计</text>
+        <text class="price">
+				<text class="currency">{{currency}}</text>
+        <text>{{order.total}}</text>
+        </text>
+    </view>
+    <!-- 实付金额结束 -->
+
+    <!-- 订单时间 订单号开始 -->
+    <view class="date-detail">
+        <view wx:if="{{order.transaction_id != ''}}" class="detail-row">
+            <text class="detail-name">交易号</text>
+            <text class="detail-value">{{order.transaction_id}}</text>
+        </view>
+        <view class="detail-row">
+            <text class="detail-name">订单号</text>
+            <text class="detail-value">{{order.order_key}}</text>
+        </view>
+        <view class="detail-row">
+            <text class="detail-name">创建时间</text>
+            <text class="detail-value">{{order.date_created}}</text>
+        </view>
+        <view wx:if="{{order.date_paid != ''}}" class="detail-row">
+            <text class="detail-name">付款时间</text>
+            <text class="detail-value">{{order.date_paid}}</text>
+        </view>
+    </view>
+    <!-- 订单时间 订单号结束 -->
+
+    <!-- 底栏开始 -->
+    <view class="actions-button">
+        <button class="btn" catchtap="goHome">HOME</button>
+        <block wx:if="{{order.status == 'pending'}}">
+            <button class="btn" bindtap="cancelOrder">取消订单</button>
+            <button class="btn btn-primary" bindtap="makePayment">立即付款</button>
+        </block>
+        <block wx:if="{{order.status != 'pending'}}">
+            <button class="btn" open-type="contact" show-message-card="true" session-from="shop-order-detail" send-message-title="商城订单 - {{order.id}}">联系客服</button>
+        </block>
+    </view>
+    <!-- 底栏结束 -->
+</view>

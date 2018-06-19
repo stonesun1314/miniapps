@@ -1,0 +1,195 @@
+<!--
+/*
+ * 
+ * WordPres版微信小程序
+ *
+ */-->
+
+<view class="container" style="width=100%; margin-top: 120rpx;">
+
+  <!--//drop menu-->
+
+
+  <!-- 侧滑菜单-->
+  <view class="slide-mask" style="display:{{maskDisplay}}" bindtap="slideCloseEvent"></view>
+  <view class="slide-menu" style="right: {{slideRight}}px;width: {{slideWidth}}px;height:{{slideHeight}}px;" animation="{{slideAnimation}}">
+    <scroll-view scroll-y="true" style="height:100%;width:100%">
+      <view class="header">
+        <label bindtap="makePhoneCall">
+          <text class="banner-text">买黑胡桃 到熙然木业\n </text>
+          <text>美国黑胡桃原材料一站式源头供应商\n</text>
+          <image src="../../images/telephone.png" style="width:5%;margin-top:8px;margin-bottom:1px;margin-right:3px;" mode="widthFix"></image>
+          <text class="banner-text">0769-8307 7786</text>
+        </label>
+        <view class="toolbar">
+         
+        </view>
+        <icon type="cancel" size="34" class="close-btn" color="#FFF" bindtap="slideCloseEvent" />
+      </view>
+      <view >
+ 
+ 
+
+
+
+      </view>
+       
+      <view class="slide-inner">
+        <view class="filter-list-item-desc">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+        <text class="top-filter-count">请往上拉，直到看到“筛选”按钮\n</text>
+          <text>长度 Length(mm):\n</text>
+          <checkbox-group bindchange="lengthcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsL}}" wx:key="key">
+              <checkbox id="lengthCheckBox" value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+
+          <text>\n</text>
+          <text>宽度 Width(mm):\n</text>
+          <checkbox-group bindchange="widthcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsW}}" wx:key="key">
+              <checkbox id="widthCheckBox" value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>厚度 Thickness(mm):\n</text>
+          <checkbox-group bindchange="heightcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsH}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>类型 Modeling:\n</text>
+          <checkbox-group bindchange="modelingcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsM}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>板面 Pattern:\n</text>
+          <checkbox-group bindchange="patterncheckboxChange">
+            <label class="checkbox" wx:for="{{itemsP}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <button class="button-font" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" formType="reset">清空</button>
+          <text>\n</text>
+          <button class="button-font" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" formType="submit">筛选</button>
+          <text>\n</text>
+          <text>\n</text>
+          
+        
+        
+        
+        </form>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <!-- 侧滑菜单  -->
+ 
+ 
+  <view style="height:{{scrollHeight}}px; " scroll-y="true" bindscrolltolower="lower" lower-threshold="100" bindscroll="scroll" scroll-top="{{scrollTop}}">
+    
+    
+    
+    
+    <view class="search-area-fixed" >
+<form catchsubmit="formSearchSubmit" catchreset="formSearchReset">
+       <view class="search-pancel">
+          <input value="" name="input" confirm-type="search" class="search-input" placeholder="请输入款号..." bindblur="inputquery" bindconfirm="eventSearch" ></input>
+          <button class="search-button" form-type="submit" size="mini" plain="true" bindtap="queryEvent">
+            <icon type="search" color="#296FD0" size="20"/>
+          </button>
+          <!--
+          <button class="share-button" open-type="share" size="mini" plain="true">转发</button> -->
+        </view>
+      </form>
+ </view>
+
+  
+
+  <!--<scroll-view  >-->
+<!-- 搜索区-->
+
+
+
+
+
+
+
+<text class="top-filter-count">找到{{productCount}}款产品\n</text>
+    <view style="width:100%">
+      <!--<view class="img_item2">
+        <view wx:for="{{productsList}}" wx:key="key">
+          <image src="{{item.featured_src}}" style="width:100%;margin-top:8px;margin-bottom:1px;border-radius:3%; opacity:1.0; box-shadow:2px 2px 10px #AAA;" mode="widthFix" data-id="{{item.id}}" data-title="{{item.title}}" bindtap="redictDetail"></image>
+          <text class="list-item-desc"> {{item.title}}-{{item.categories}}\n 尺寸(m):{{item.dimensions.length}}*{{item.dimensions.width}}*{{item.dimensions.height}} </text>
+        </view>
+      </view>-->
+
+
+ <view class="topic-common-list">
+      <block wx:key="key" wx:for="{{productsList}}">
+        <view class="list-item" data-id="{{item.id}}" data-title="{{item.title}}" bindtap="redictDetail" style="opacity:1.0; box-shadow:2px 2px 10px #AAA;">
+          <view>
+            <image src="{{item.featured_src}}" mode="widthFix" class="cover"></image>
+          </view>
+          <view class="content-title">
+            <text>{{item.title}}-{{item.categories}}</text>
+          </view>
+          <view class="content-brief">
+            <text>尺寸(m):{{item.dimensions.length}}*{{item.dimensions.width}}*{{item.dimensions.height}} </text>
+       
+          </view>
+        </view>  
+             
+      </block>
+    </view>
+
+
+      <!-- <view class="img_item">
+        <view wx:for="{{col1}}" wx:key="key">
+          <image src="{{item.featured_src}}" style="width:100%;margin-top:8px;margin-bottom:1px;border-radius:3%; opacity:1.0; box-shadow:2px 2px 10px #AAA;" mode="widthFix" data-id="{{item.id}}" data-title="{{item.title}}" bindtap="redictDetail"></image>
+          <text class="list-item-desc"> {{item.title}}-{{item.categories}}\n 尺寸(m):{{item.dimensions.length}}*{{item.dimensions.width}}*{{item.dimensions.height}} </text>
+        </view>
+      </view>
+      <view class="img_item">
+        <view wx:for="{{col2}}" wx:key="key">
+          <image src="{{item.featured_src}}" style="width:100%;margin-top:8px;margin-bottom:1px;border-radius:3%; opacity:1.0; box-shadow:2px 2px 10px #AAA;" mode="widthFix" data-id="{{item.id}}" data-title="{{item.title}}" bindtap="redictDetail"></image>
+          <text class="list-item-desc"> {{item.title}}-{{item.categories}}\n 尺寸(m):{{item.dimensions.length}}*{{item.dimensions.width}}*{{item.dimensions.height}} </text>
+        </view>
+      </view> -->
+    </view>
+    <view wx:if="{{noMoreProduct}}">
+      <label class="bottom-nomore">没有更多</label>
+    </view>
+    <view wx:if="{{requestComplete && productCount==0}}">
+      <text class="bottom-nomore">没有符合您要求的产品，\n建议换个姿势再筛选一遍。｡◕‿◕｡</text>
+    </view>
+
+  </view>
+
+
+
+  <!--加载态-->
+
+  <image src="../../images/top.png" class="home-scroll-top" bindtap="goTop" wx:if="{{ floorstatus }}">返回顶部</image>
+
+  
+  <view class="float-action" bindtap="ballClickEvent" style="opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent">
+    <text class="float-menuball-font">筛选</text>
+  </view>
+
+  <loading hidden="{{hidden}}">
+    Loading...
+  </loading>
+
+</view>

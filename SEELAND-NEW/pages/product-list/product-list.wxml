@@ -1,0 +1,101 @@
+<!--pages/product-list/product-list.wxml-->
+<import src="../../vendor/ZanUI/loadmore/index.wxml" />
+<import src="../../vendor/ZanUI/toptips/index.wxml" />
+<import src="../../templates/product-list.wxml" />
+<import src="../../templates/login-popup.wxml" />
+
+<!-- 筛选功能菜单 -->
+<!-- Begin of 备注2 -->
+<view class="isfilterTOP">
+  <view class="filtertabs">
+   <!--  <view class="filtertab" bindtap="openFenlei"><text style="color:{{textFenlei?'#000':'#04d'}}">分类</text></view> -->
+    <view class="filtertab" bindtap="openFenlei"><text style="color:{{textFenlei?'#000':'#21759b'}}">分类</text></view>
+    <view class="filtertab" bindtap="openShaixuan"><text style="color:{{textShaixuan?'#000':'#21759b'}}">筛选</text></view>
+  </view>
+  <view class="filtertabL" style="display:{{tabFenlei?'none':'block'}}"> 
+    这是分类 
+    <view class="filterbg"></view>
+  </view>
+  <view class="filtertabR" style="display:{{tabShaixuan?'none':'block'}}"> 
+    <!-- 这是筛选 -->
+    <scroll-view scroll-y="true" scroll-into-view="" scroll-top="">
+            <view class="slide-inner">
+        <view class="filter-list-item-desc">
+        <!-- <text class="top-filter-count">请往上拉，直到看到“筛选”按钮\n</text> -->
+          <text>长度 Length(mm):\n</text>
+          <checkbox-group bindchange="lengthcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsL}}" wx:key="key">
+              <checkbox id="lengthCheckBox" value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+
+          <text>\n</text>
+          <text>宽度 Width(mm):\n</text>
+          <checkbox-group bindchange="widthcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsW}}" wx:key="key">
+              <checkbox id="widthCheckBox" value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>厚度 Thickness(mm):\n</text>
+          <checkbox-group bindchange="heightcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsH}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked?true:false}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>类型 Modeling:\n</text>
+          <checkbox-group bindchange="modelingcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsM}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>板面 Pattern:\n</text>
+          <checkbox-group bindchange="patterncheckboxChange">
+            <label class="checkbox" wx:for="{{itemsP}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <!--<text>\n</text>
+          <button class="button-font" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="primary">清空</button>-->
+          <text>\n</text>
+          <button class="button-font" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="fliterClick">筛选</button>
+          <text>\n</text>
+          <text>\n</text>
+          
+        </view>
+    </view>
+    </scroll-view>
+
+
+    <view class="filterbg"></view>
+  </view>
+</view>
+<!-- End of 备注2 -->
+
+
+
+<view wx:if="{{products != null}}" class="container">
+
+    <button class="btn side-btn cart-btn" bindtap="goCart">
+        <image src="../../images/cart_light.png"></image>
+        <text class="cart-quantity">{{cart_quantity}}</text>
+    </button>
+    <button class="btn side-btn go-top-btn" bindtap="goTop">
+        <image src="../../images/top_light.png"></image>
+    </button>
+
+    <template is="product-list" data="{{products: products, currency: currency}}"></template>
+
+    <template wx:if="{{bottomStyle == 'loading'}}" is="zan-loadmore" data="{{loading:true}}"></template>
+    <template wx:if="{{bottomStyle == 'nomore'}}" is="zan-loadmore" data="{{nomore:true}}"></template>
+
+    <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+    <template is="zan-toptips" data="{{ zanTopTips }}"></template>
+</view>

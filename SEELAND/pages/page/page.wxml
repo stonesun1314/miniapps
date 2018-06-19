@@ -1,0 +1,17 @@
+<!--
+/*
+ * 
+ * WordPres版微信小程序
+ * 
+ */-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="container">
+    <view class="content-article ">
+                    <view class="entry-title">
+                   {{pageData.title.rendered}}
+                    </view>
+                    <view class="entry-summary">
+                    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                    </view>
+                </view>
+</view>

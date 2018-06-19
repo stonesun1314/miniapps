@@ -1,0 +1,65 @@
+/*
+ * 
+ * WordPres版微信小程序
+ * 
+ */
+
+
+.layout_all{
+text-align: center;
+}
+
+.bro_title{
+	  font-size: 30rpx;
+    font-weight: 700;
+    color: rgb(30, 178, 225);
+    line-height:1.6rem;
+}
+
+.bro_slogon{
+	  font-size: 30rpx;
+    font-weight: 700;
+    color: rgb(255, 169, 0);
+    line-height:1.6rem;
+}
+
+.bro_company{
+	  font-size: 40rpx;
+    font-weight: 700;
+    color: rgb(64, 118, 0);
+    line-height:1.6rem;
+}
+
+
+.center_sec{
+	text-align: center;
+	margin-top: 40rpx;
+	margin-bottom: 40rpx;
+}
+
+
+.paragraph{
+  font-size: 30rpx;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+  color: #757575; 
+  line-height:1.2rem;
+  /*text-indent:50rpx;*/
+  text-align:justify;
+  padding:0rpx 40rpx;
+}
+
+.key_words{
+	color: rgb(64, 118, 0);
+}
+
+.button-hover {
+  background-color: rgb(255, 169, 0);
+}
+
+.button-call{
+
+  font-size: 60rpx;
+  padding:0rpx 40rpx;
+  text-align:center;
+}

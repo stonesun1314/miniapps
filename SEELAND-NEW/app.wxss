@@ -1,0 +1,517 @@
+/* app.wxss */
+@import "vendor/ZanUI/index.wxss";
+@import "vendor/wxParse/wxParse.wxss";
+
+page, view {
+    box-sizing: border-box;
+    color: #444;
+    /*font-size: 28rpx;*/
+    font-size: 28rpx;
+}
+
+text {
+    /*line-height: 1.8;*/
+    line-height: 1.8;
+}
+
+button {
+    border-radius: 6rpx;
+}
+
+page button {
+    border: 2rpx solid rgba(0, 0, 0, 0.2);
+}
+
+page button::after {
+    display: none;
+}
+
+image, swiper {
+    width: 100%;
+    display: block;
+}
+
+.WxEmojiView {
+    color: inherit;
+}
+
+.center {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-title {
+    line-height: 60rpx;
+    position: relative;
+    /* color: #96588a; */
+    /* color: #21759b; */
+    text-align: center;
+    margin: 20rpx;
+    font-size: 36rpx;
+}
+
+.center-title text {
+    background-color: #fff;
+    padding: 0 30rpx;
+    position: relative;
+}
+
+.center-title::before {
+    content: " ";
+    display: block;
+    width: 450rpx;
+    height: 1px;
+    /* background-color: #96588a; */
+    /* background-color: #21759b; */
+    background-color: #808080; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn {
+    font-size: 28rpx;
+    border: 0;
+    transition: background-color 200ms ease-in-out;
+}
+
+.btn.disabled {
+    background-color: #aaa;
+}
+
+.btn-primary {
+    color: #fff;
+    /* background-color: #96588a; */
+    background-color: #21759b;
+}
+
+.single-line {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product-price .currency {
+    font-size: 20rpx;
+    vertical-align: text-top;
+}
+
+.input-placeholder {
+    color: #21759b;
+    font-size: 28rpx;
+}
+
+.input-placeholder-gray {
+    color: #707070;
+    font-size: 28rpx;
+}
+
+button .cart-quantity {
+    display: block;
+    font-size: 12px;
+    min-width: 10px;
+    height: 40rpx;
+    line-height: 40rpx;
+    color: #fff !important;
+    /*background-color: #96588a;*/
+    background-color: #ff0000;
+    border-radius: 20rpx;
+    padding: 0 10rpx;
+    white-space: nowrap;
+}
+
+/* ZanUI 加载更多 */
+
+.zan-loadmore--nodata, .zan-loadmore--nomore,
+.zan-loadmore.zan-loadmore--nomore .zan-loadmore__tips {
+    background-color: inherit;
+}
+
+.zan-loadmore--nomore .zan-loadmore__tips {
+    top: -11px;
+    height: 19px;
+    line-height: 19px;
+}
+
+.zan-loadmore__dot {
+    width: 5px;
+    height: 5px;
+}
+
+/* wxParse */
+
+.wxParse-inline {
+    line-height: 1.4;
+}
+
+/* 产品已选属性 */
+
+.choose-wrapper {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+.choose-wrapper text {
+    margin-right: 7px;
+    color: #333;
+}
+
+/* 产品列表 */
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.product-list  .product-price .currency {
+    font-size: inherit;
+    vertical-align: initial;
+}
+
+.product-list .product {
+    width: 50%;
+    padding: 0 5px;
+    margin-bottom: 20px;
+}
+
+.product .product-image-wrapper {
+    position: relative;
+}
+
+.product .onsale, .product .outstock {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 14px;
+}
+
+.product .onsale {
+    /*background-color: #96588a;*/
+    background-color: #f4b127;
+}
+
+.product .outstock {
+    background-color: #aaa;
+}
+
+.product .product-title, .product .product-price {
+    display: block;
+}
+
+.product .product-title {
+    /*color: #96588a;*/
+    color: #21759b;
+    word-break: break-word;
+}
+
+.product .cart {
+    margin-top: 2px;
+}
+
+.product .add-to-cart {
+    display: block;
+     color: #333; 
+    /* color:blueviolet; */
+}
+
+.product .product-regular_price, .product .product-price,
+.product-detail .product-regular_price, .product-detail .product-price {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.product .product-regular_price, .product-detail .product-regular_price {
+    color: #909090;
+    text-decoration: line-through;
+}
+
+.product .product-price, .product-detail .product-price {
+    color: #505050;
+    margin-right: 7px;
+}
+
+/* 选项卡 */
+
+.zan-tab {
+    height: auto;
+}
+
+.zan-tab .zan-tab__title {
+    height: 40px;
+    line-height: 40px;
+}
+
+.zan-tab .zan-tab__item--selected .zan-tab__title {
+    /* color: #96588a;
+    border-bottom: 2px solid #96588a; */
+    color: #21759b;
+    border-bottom: 2px solid #21759b;
+}
+
+.tab-content-wrapper {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.tab-content-wrapper.full-width {
+    padding: 10px 0;
+}
+
+.tab-content-wrapper .tab.hidden {
+    display: none;
+}
+
+/* 弹窗按钮 */
+
+.popup-btn {
+    display: flex;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    text-align: left;
+    border: 0;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+.popup-btn .button-main {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.popup-btn .go-popup {
+    display: flex;
+    align-items: center;
+}
+
+.popup-btn .go-popup image {
+    width: 15px;
+    height: 15px;
+}
+
+/* 弹窗 */
+
+.login-popup .zan-popup__mask {
+    z-index: 11;
+}
+
+.login-popup .zan-popup__container {
+    z-index: 12;
+}
+
+.zan-popup .zan-popup__container {
+    width: 100%;
+    overflow: visible;
+}
+
+.zan-popup .popup-wrapper {
+    width: 100%;
+    padding: 0 15px;
+    padding-bottom: 10px;
+    overflow: visible;
+}
+
+.zan-popup .popup-wrapper .popup-title {
+    font-size: 16px;
+    padding: 15px 0;
+}
+
+.zan-popup .btn-primary.confirm {
+    height: 50px;
+    line-height: 50px;
+    border-radius: 0;
+}
+
+/* 选择收货地址及订单地址 */
+
+.select-address, .shipping-and-coupon, .cart-list, .order-comment, .price-detail {
+    margin: 10px 0;
+}
+
+.select-address.selected {
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.select-address .customer-info, .select-address .address {
+    line-height: 1;
+}
+
+.select-address .customer-info text, .select-address .address text {
+    margin-right: 5px;
+}
+
+.select-address .address {
+    color: #999;
+    font-size: 12px;
+}
+
+/* 登录框 */
+
+.login-popup .zan-popup__container {
+    background-color: transparent;
+}
+
+.login-popup-wrapper {
+    margin: 0 25px;
+}
+
+.login-popup button {
+    background-color: transparent;
+    padding: 0;
+}
+
+.login-popup .login-inner {
+    background-color: #fff;
+    padding: 10px 15px;
+}
+
+.login-inner {
+    display: flex;
+}
+
+.login-inner .avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.login-inner .close-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.login-inner .username {
+    display: flex;
+    align-items: center;
+}
+
+.login-inner .username text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 顶部提示 */
+
+.zan-toptips {
+    font-size: 12px;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.zan-toptips text {
+    display: block;
+    line-height: 1.4;
+}
+
+/* 购物车数量 */
+
+text.cart-quantity {
+    position: absolute;
+    top: -16px;
+    right: 0;
+    height: 1.6em;
+    min-width: 1.6em;
+    line-height: 1.6;
+    padding: 0 0.4em;
+    font-size: 24px; 
+    border-radius: 0.8em;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    transform: translateX(50%) scale(0.5);
+    transform-origin: center;
+    z-index: 10;
+    box-shadow: 0 0 0 2px #fff;
+    box-sizing: border-box;
+}
+
+.copyright {
+    color: #999;
+    align-items: center;
+    font-size: 12px;
+    padding: 30px 0;
+}
+
+/*筛选功能菜单*/
+/*********/
+/*备注 1 */
+/*********/
+
+/*顶部整个框架*/
+.isfilterTOP {
+  /*写浮动*/
+  position: fixed;
+  /*浮动了就要永远在顶部*/
+  top:0 ;
+  /*既然浮起来了就不能被遮挡，数值越高就不能被遮挡*/
+  /* z-index: 99999; */
+  z-index: 99;
+  /*为了测试可以写个背景颜色*/
+  /*background-color: #d5d5d5;*/
+  width:100%;
+}
+.filtertabs {
+  position: relative;
+  /*写布局具体自行百度*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  align-items:flex-start;
+}
+.filtertab {
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items:center;
+  border: 1rpx #808080 solid;
+  width: 50%;
+  background-color: #fff;
+
+}
+.filtertabL ,.filtertabR {
+  /*上面这样做是为了实现两个css同时写*/
+  position: relative;
+  width: 100%;
+  /*上面是为了全屏遮挡*/
+  padding: 30rpx;
+  background-color: #fff;
+}
+.filterbg {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.dimension_fonts {
+    font-size: 22rpx;
+}

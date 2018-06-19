@@ -1,0 +1,53 @@
+<!--pages/index/index.wxml-->
+<import src="../../vendor/ZanUI/toptips/index.wxml" />
+<import src="../../templates/product-list.wxml" />
+<import src="../../templates/login-popup.wxml" />
+
+<view wx:if="{{banner != null}}" class="container home">
+
+    <!-- 搜索栏开始 -->
+    <form bindsubmit="searchSubmit">
+        <view class="search">
+            <view class="search-input-wrapper">
+                <input class="search-input" type="text" name="search" placeholder="搜索" confirm-type="search" placeholder-class="input-placeholder" value="{{search}}" bindconfirm="searchSubmit" bindinput="searchInput"></input>
+                <button wx:if="{{clearSearchShow}}" class="btn clear-btn" bindtap="clearSearch">
+                    <image src="../../images/close_white.png"></image>
+                </button>
+                <button class="btn search-btn" form-type="submit">
+                    <image src="../../images/search.png"></image>
+                </button>
+            </view>
+        </view>
+    </form>
+    <!-- 搜索栏结束 -->
+
+    <!-- Banner开始 -->
+    <swiper class="banner" indicator-dots="{{banner.length > 1 ? 'true' : false}}" circular="true" autoplay="true" interval="5000" duration="300" bindchange="imageChange" style="height:{{imgHeights[current]}}rpx;">
+        <block wx:for="{{banner}}">
+            <swiper-item data-url="{{item.url}}" bindtap="bannerTap">
+                <image src="{{item.image}}" class="slide-image" bindload="imageLoad" style="height:{{imgHeights[current]}}rpx;width:{{imgwidth}}rpx;" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- Banner结束 -->
+
+    <!-- 精选产品开始 -->
+    <view class="center-title">
+        <text>精选产品</text>
+    </view>
+    <template is="product-list" data="{{products: featured_products, currency: currency}}"></template>
+    <!-- 精选产品结束 -->
+
+    <!-- 最新产品开始 -->
+    <view class="center-title">
+        <text>最新产品</text>
+    </view>
+    <template is="product-list" data="{{products: lastest_products, currency: currency}}"></template>
+    <button class="view-all" bindtap="goViewAll">
+        <text>查看所有产品</text>
+    </button>
+    <!-- 最新产品结束 -->
+
+    <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+    <template is="zan-toptips" data="{{ zanTopTips }}"></template>
+</view>

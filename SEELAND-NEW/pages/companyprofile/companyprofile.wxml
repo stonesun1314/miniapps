@@ -1,0 +1,111 @@
+<!--/*
+ * 
+ * WordPres版微信小程序
+ * 
+ */-->
+<import src="../../templates/footer.wxml" />
+<view class="layout_all">
+<image src="../../images/xiranmuye.jpg" mode="widthFix"></image>
+<text>\n</text>
+<view class="center_sec"><text class="bro_title">公 司 简 介\n</text>
+
+<text class="bro_slogon">买黑胡桃到熙然木业\n</text>
+
+<text class="bro_company">东莞市熙然木业有限公司\n</text>
+
+</view>
+
+<view class="paragraph">
+熙然木业是黑胡桃原材料一站式源头供应商；
+</view>
+<view class="paragraph">提供最全面的黑胡桃备料方案；解决客户对黑胡桃原材料<label class="key_words">质量、交期、成本</label>的关切，让客户只需专注于设计和市场。
+</view>
+<view class="paragraph">公司拥有全面的生产管理团队，对各行业用材，研发和生产黑胡桃原木、板材、地板、家具备料、指接板、复合板、桌面板、艺术板等黑胡桃制品。</view>
+
+<view class="paragraph">熙然木业秉承“做人、做木头、做木头人”的信念，踏实做人，专业做木头，专心做事，以满足客户需求为己任，矢志成为最专业的黑胡桃B2B供应商。</view>
+
+
+<image src="../../images/factory.jpg" mode="widthFix"></image>
+
+<view class="center_sec"><text class="bro_title">公 司 产 品\n</text>
+<text class="bro_slogon">买黑胡桃到熙然木业\n</text>
+<text class="bro_company">一
+黑胡桃原木</text>
+</view>
+
+<view class="paragraph">美国黑胡桃原木，所有产品的开始；</view>
+<view class="paragraph">我司直接从国外林场采购，每月到货达200多条柜，从源头上保证供应稳定；</view>
+<view class="paragraph">各等级原木，刨切材，桌面板原木，现场可供客户挑选；</view>
+<image src="../../images/logs.jpg" mode="widthFix"></image>
+
+<view class="center_sec"><text class="bro_company">二
+黑胡桃板材</text></view>
+
+<view class="paragraph">板材，按美国硬木板材分级质量标准;</view>
+<view class="paragraph">SUP、FAS、1COM、2COM</view>
+<view class="paragraph">除了常规尺寸，我司在美国标准的基础上，突破其供应的规格限制，为客户定制非标板，及更高质量的板材，如3/4、7/8、7/4...
+更多选择，合适使用，为客户节省成本 </view>
+<image src="../../images/bc.jpg" mode="widthFix"></image>
+
+
+
+<view class="center_sec"><text class="bro_company">三
+黑胡桃家具备料\n</text>
+<text class="bro_slogon">家具厂必选
+让家具生产更简单</text></view>
+
+<view class="paragraph">家具备料，是我司专为家具厂备料做得更精更细的方式；</view>
+<view class="paragraph">供应产品有定制规格料、直拼板、指接板、三层纯实木拼板(能最大限度解决实木变形开裂问题)，可为客户提供两种方案：</view>
+
+<view class="paragraph">1、常规生产：2440*1220，</view>
+<view class="paragraph">厚度：3/5/8/12/15/18/20/25/30/35/45</view>
+<view class="paragraph">2、定制备料：根据客户产品配件规格生产，</view>
+<view class="paragraph">如1230X800X18 ，2100X700X20，500X45X45</view>
+
+<view class="paragraph">我们专业的设备和生产人员，会让您产品的材料、工艺、品质更为可靠；</view>
+<view class="paragraph">你可以大大减少板材库存，提高场地利用，加速资金运转；</view>
+
+<view class="paragraph">我们帮您备料，可以直接进加工线，加快交期，节约备料环节的人工、厂租及其他管理成本，出材率可控在100%，产品成本一清二楚，能让您更好的跟客户沟通和推广产品。携手熙然，我们能让您在黑胡桃的领域更好更快更强 。</view>
+<image src="../../images/eg.jpg" mode="widthFix"></image>
+<image src="../../images/fj.jpg" mode="widthFix"></image>
+<image src="../../images/sw.jpg" mode="widthFix"></image>
+
+
+
+<view class="center_sec"><text class="bro_company">四
+黑胡桃地板坯料</text></view>
+
+<view class="paragraph">地板/框片板，对地板行业，我司提供国内最齐全的规格，高于同行业的质量标准，月产量达30000平方米；</view>
+<view class="paragraph">规尺寸：1860*190、1200*150、900*120、450*90....</view>
+
+
+<image src="../../images/fl.jpg" mode="widthFix"></image>
+
+
+<view class="center_sec"><text class="bro_company">五
+黑胡桃桌面板</text></view>
+
+<view class="paragraph">自然大板/桌面板，是我司以自然风格、独特个性、高端大气为主题的产品；</view>
+<view class="paragraph">利用各种加工工艺来表达珍惜黑胡桃这一名贵木材；有独片大板、双拼对称、三拼、多拼、立拼等等，各有各的特点，适合各种场所使用；</view>
+
+<view class="paragraph">我司的独片大板库存达2000片以上，国内库存量最多，可在小程序上挑选，或直接到厂看现货；</view>
+
+<image src="../../images/table.jpg" mode="widthFix"></image>
+<image src="../../images/table2.jpg" mode="widthFix"></image>
+<view class="center_sec"><text class="bro_company">六
+黑胡桃树瘤</text></view>
+
+<view class="paragraph">树瘤，是一款惊艳的品种，数量稀少珍贵，其加工出来的花纹绚丽多彩，千变万化，有着极高的工艺和装饰效果；</view>
+<view class="paragraph">我司拥有的黑胡桃树瘤库存量也是国内最多，各种形状可供挑选；致力于为客户提供美国黑胡桃领域最多最好的产品选择和体现；</view>
+
+
+<image src="../../images/burl.jpg" mode="widthFix"></image>
+
+<view class="button-call">
+<button type="primary" size="default" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="makePhoneCall" hover-class="button-hover"> 0769-8307 7775 </button>
+ </view>
+   <view class="copyright" style="display:{{floatDisplay}}">
+      <template is="tempCopyright" />
+    </view>
+ </view>

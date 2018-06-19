@@ -1,0 +1,14 @@
+<!--
+/*
+ * 
+ * WordPres版微信小程序
+ *
+ * 
+ */-->
+<template name="tempCopyright"> 
+  <view class="header">    
+    <view>
+      © 2002-2017 东莞市熙然木业有限公司
+    </view>
+  </view>
+</template>

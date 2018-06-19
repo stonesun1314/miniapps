@@ -1,0 +1,17 @@
+<!--/*
+ * 
+ * WordPres版微信小程序
+ * 
+ */-->
+
+<template name="tempHeader"> 
+  <view class="header">
+    <view>
+      
+    </view>
+
+
+  </view>
+
+</template>
+<!-- header end -->

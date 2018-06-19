@@ -1,0 +1,25 @@
+<template name="waterfall-list1">
+    <block wx:for="{{list1}}" wx:for-index="index" >
+        <navigator url="../news/news?id={{item.id}}" >
+            <view class="item">
+                <image class="img" src="{{item.img}}" wx:if="{{item.img}}"/>
+                <image class="img" src="/images/2.jpg" wx:else/>
+                <text class="title">{{item.title}}</text>
+                <text class="text " >{{item.content}}</text>
+            </view>
+        </navigator>
+    </block>
+</template>
+
+<template name="waterfall-list2">
+    <block wx:for="{{list2}}" wx:for-index="index">
+        <navigator url="../news/news?id={{item.id}}">
+            <view class="item">
+                <image class="img" src="{{item.img}}" wx:if="{{item.img}}"/>
+                <image class="img" src="/images/1.jpg" wx:else/>
+                <text class="title">{{item.title}}</text>
+                <text class="text">{{item.content}}</text>
+            </view>
+        </navigator>
+    </block>
+</template>

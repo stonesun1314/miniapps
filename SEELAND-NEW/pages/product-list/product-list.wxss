@@ -1,0 +1,62 @@
+/* pages/product-list/product-list.wxss */
+
+.container {
+    padding: 10px 0;
+    margin-top: 72rpx;
+}
+
+.zan-loadmore.zan-loadmore--loading {
+    position: static;
+    width: 100%;
+    margin: 0;
+    margin-top: -3px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zan-loadmore.zan-loadmore--nomore {
+    overflow: visible;
+    margin: auto;
+    margin-top: 4px;
+    margin-bottom: -2px;
+    line-height: 10px;
+}
+
+.zan-loadmore.zan-loadmore--nomore .zan-loadmore__tips {
+    background-color: #fff;
+    top: -10px;
+}
+
+/* 购物车按钮 */
+
+.side-btn {
+    position: fixed;
+    right: 15px;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    overflow: visible;
+    z-index: 12;
+}
+
+.side-btn image {
+    width: 100%;
+    height: auto;
+}
+
+.cart-btn {
+    bottom: 65px;
+}
+
+.go-top-btn {
+    bottom: 20px;
+}
+
+
+
+

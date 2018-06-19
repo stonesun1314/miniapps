@@ -1,0 +1,59 @@
+<!--/*
+ * 
+ * WordPres版微信小程序
+ * 
+ */-->
+
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../templates/header.wxml" />
+
+ <!--  <image src="../../images/top.png" class="home-scroll-top" bindtap="goTop" wx:if="{{ floorstatus }}">返回顶部</image>
+  
+  <scroll-view scroll-y="true" style="position: absolute; left: 20px; top:0; bottom: 0; right: 20px;"  bindscroll="scroll" scroll-top="{{scrollTop}}"> -->
+  <view class="" style="position: absolute; left: 40rpx; top:0; bottom: 0; right: 40rpx;" >
+    
+
+    <view class="content-article-detail">
+      <text class="detail-title">{{detail.title}} {{detail.categories}}\n</text>
+      <text class="detail-subtitle">{{detail.categories}} {{detail.dimensions.length}}*{{detail.dimensions.width}}*{{detail.dimensions.height}} </text>
+    </view>
+    <view class="content-article-detail">
+      <text class="detail-desc-bottom">长度 ({{detail.dimensions.unit}}) : {{detail.dimensions.length}}\n</text>
+      <text class="detail-desc-bottom">宽度 ({{detail.dimensions.unit}}) : {{detail.dimensions.width}}\n</text>
+      <text class="detail-desc-bottom">厚度 ({{detail.dimensions.unit}}) : {{detail.dimensions.height}}\n</text>
+      <text class="detail-desc-bottom">立方数 (m<text style="vertical-align: super;font-size: 20rpx;">3</text>) : {{volume}}\n</text>
+<!--       <text class="detail-desc-bottom" wx:if='"{{detail.status}} == "trash"'>状态 : 缺货 {{detail.status}}</text>
+
+      <text class="detail-desc-bottom" wx:elif="{{detail.status}} != trash">状态 : 有货  </text> -->
+         <!-- <button wx:if="{{!hasUserInfo && canIUse}}"> 获取头像昵称 </button> -->
+     <text class="detail-desc-bottom" wx:if='{{detail.status == "trash"}}'>状态 : 缺货 {{detail.status}}</text>
+
+      <block wx:else>
+       <text class="detail-desc-bottom">状态 : 有货  </text> 
+    </block>
+
+    </view>
+
+
+    <view class="entry-summary">
+      <text class="detail-desc-bottom">产品图片</text>
+       <text class="detail-desc-click">（点击图片可大图欣赏）</text>
+
+    <!--/*  <image src="{{detail.featured_src}}" mode="widthFix"></image> */-->
+
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" mode="widthFix" />
+
+    </view>
+
+     <view class="sharedetail">
+        <view>
+          
+          <button class="copy-button" formType="submit" size="mini" bindtap="copyLink">复制链接</button>
+        </view>
+        <view class="showMessage">
+          点击"复制链接"按钮,通过外部浏览器访问原始页面.
+        </view>
+      </view>
+
+  <!-- </scroll-view> -->
+  </view>

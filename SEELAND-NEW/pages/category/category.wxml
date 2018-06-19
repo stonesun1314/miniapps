@@ -1,0 +1,44 @@
+<!--pages/category/category.wxml-->
+
+<view wx:if="{{categories.length > 0}}" class="container">
+
+    <view class="special-categories">
+        <view class="featured" bindtap="goFeatureProducts">
+            <view class="category-image">
+                <image src="../../images/favor_fill.png"></image>
+            </view>
+            <view>
+                <text>精选</text>
+            </view>
+        </view>
+        <view class="onsale" bindtap="goOnSaleProducts">
+            <view class="category-image">
+                <image src="../../images/sale_fill.png"></image>
+            </view>
+            <view>
+                <text>促销</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="categories">
+        <block wx:for="{{categories}}">
+            <view class="category" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="goCategoryProducts">
+                <view class="category-image">
+                    <image src="{{item.image != '' ? item.image : '../../images/placeholder.png'}}"></image>
+                </view>
+                <view class="category-detail">
+                    <view class="category-name">
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view class="category-description">
+                        <text>{{item.description}}</text>
+                    </view>
+                </view>
+                <view class="go">
+                    <image src="../../images/go_light.png"></image>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

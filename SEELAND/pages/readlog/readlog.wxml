@@ -1,0 +1,102 @@
+<!--
+/*
+ * 
+ * WordPres版微信小程序
+ * 
+ *
+ */-->
+<import src="../../templates/footer.wxml" />
+<view class="container">
+ 
+  <view   class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+
+<!--button-->  
+<view class="btn" bindtap="powerDrawer" data-statu="open">联系我们</view>  
+  
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+
+<!--drawer content-->  
+<view class="drawer_title">联系我们</view>  
+<view class="drawer_content">  
+<view class="top grid"> 
+       
+<label class="title col-0" bindtap="copyLink">www.seeland-wood.com</label>
+</view>  
+<view class="top grid">  
+<label class="title col-0" bindtap="makePhoneCall">买黑胡桃 到熙然木业</label>       
+</view>  
+<view class="top grid">  
+<label class="title col-0" bindtap="makePhoneCall">美国黑胡桃原材料一站式源头供应商</label>        
+</view>  
+<view class="top grid">  
+<label class="title col-0" bindtap="makePhoneCall">
+
+
+          <image src="../../images/telblue.png" style="width:5%;margin-top:8px;margin-bottom:1px;margin-right:3px;" mode="widthFix"></image><text class="banner-text">0769-8307 7775</text>
+      
+
+</label>      
+</view>  
+<view class="top bottom grid" style="margin-top:10px;"> 
+<button class="btn-contact" open-type="contact" hover-class="btn-contact-hover">联系客服</button>
+</view>  
+<view class="top bottom grid" style="margin-top:10px;">  
+<label class="title col-0" bindtap="copygzh" >微信公众号：xiranmuye</label>       
+</view>  
+<view class="top bottom grid">  
+<label class="title col-0" bindtap="copyEmail">EMAIL：info@seeland-wood.com</label>       
+</view> 
+<view class="top bottom grid" style="margin-top:0px;">  
+<!--<navigator url="/pages/map/map" class="widget">--> 
+<label class="title col-0" bindtap="onClickGps">
+<image src="../../images/location_fill.png" style="width:5%;margin-top:10px;margin-bottom:1px;margin-right:3px;" mode="widthFix"></image><text class="banner-text">东莞市桥头镇大洲社区园禾岭198号</text><image class="widget_arrow" src="../../images/arrowright.png" mode="aspectFill" /></label>  
+<!--</navigator>--> 
+       
+</view>
+<view class="top bottom grid" style="margin-top:8px;">  
+<label class="title col-0">版本号：v1.0.0.5b</label>       
+</view>
+</view>  
+<!--<view class="btn_ok" bindtap="powerDrawer" data-statu="close">CLOSE</view>  -->  
+<view class="btn_ok">  
+<icon type="cancel" size="30" color="#21759b" bindtap="powerDrawer" data-statu="close" />
+</view>
+</view>  
+
+
+
+  <view class="dec">
+    <text class="dec-text">浏览记录仅保存在本地设备，且最多保存数量为二十条</text>
+  </view>
+
+  <view class="log-list">
+  <block wx:if="{{readLogs.length>0}}">
+  <block wx:key="id" wx:for="{{readLogs}}">
+ 
+  <view class="log-items" index="{{index}}" id="{{item[0]}}" catchtap="redictDetail">
+    <text class="log-text">{{index + 1}}. {{item[2]}}</text><image src="{{item[1]}}" mode="widthFix" class="log-items-pics"></image>
+        </view>
+        </block>
+      </block>
+      <block wx:else>
+
+       <view class="log-items">
+    <text class="dec-text">您还未浏览任何产品，赶紧去看看您感兴趣的产品吧！</text>
+        </view>
+
+      </block>
+</view>
+
+   <view class="copyright" style="display:{{floatDisplay}}">
+      <template is="tempCopyright" />
+    </view>
+</view>
+

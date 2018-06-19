@@ -1,0 +1,93 @@
+<view class="main-content">
+<scroll-view class="posts-list" style="height:{{scrollHeight}}px" scroll-y="true" bindscrolltolower="lower"> 
+<block wx:key="id" wx:for="{{postsList}}">
+   <view class="the-box">
+     <view class="box-header">
+        <view class="user-image">
+          <image src="{{item.author.description}}"></image>
+        </view>
+        <view class="user-info">
+           <view class="user-name">
+             <text>{{item.author.name}}</text>
+           </view>
+           <view class="data">
+             <text>{{item.date}} 来自于小程序</text>
+           </view>
+        </view>
+     </view>
+  
+     <view class="video" wx:if="{{item.custom_fields.isvideo}}">
+       <view class="content-text" >
+         <text>{{item.title}}</text>
+       </view>
+        <view class="video-image" bindtap="play" data-url="{{item.custom_fields.video}}" id="{{item.id}}" >
+          <image src="{{item.custom_fields.videoimages}}" mode="aspectFill"></image>
+        </view>
+     </view>
+     <view class="box-content" wx:else>
+        <view class="content-text" bindtap="redictDetail" id="{{item.id}}">
+       {{item.short}}
+        </view>
+        <view class="content-image" bindtap="previewImg" data-imgurl="{{item.images}}">
+           <view class="images">
+            <block wx:key="id" wx:for="{{item.images}}"  wx:for-item="img"  wx:for-index="index">  
+              <view class="image-show{{item.imagecount}}">
+                <image src="{{img}}" mode="aspectFill" style="height:{{item.imageHeight}}px"></image>
+               </view>
+            </block>
+           </view>
+        </view>
+     
+     </view>
+     <view class="box-footer">
+
+        <view class="comment">
+          <image src="../../images/comments.png" style="width:40rpx;height:40rpx"></image>
+            <text>{{item.comment_count}}</text>
+       </view>
+       <view class="zan" bindtap="iLike" id="{{item.id}}">
+          <image src="../../images/like.png" style="width:40rpx;height:40rpx"></image>
+          <text>{{item.custom_fields.like}}</text>
+       </view>
+      </view>
+       <view class="zan-content">
+       
+      <block wx:if="{{item.custom_fields.useruserurl!=''}}">
+      <view class="image-zan" hidden="{{item.userurl}}">
+      <view class="top-zan"></view>
+         <image src="../../images/zan.png"></image>
+          <text style="font-size:12px;">{{item.url}}</text>   
+         </view>
+       </block>
+      <block wx:if="{{item.comment_count!=0}}">
+       <view class="image-zan">
+       <view class="top-zan"></view>
+          <block wx:for="{{item.comments}}" wx:key="id" wx:for-index="idx">
+             <block wx:if="{{idx<6}}">
+                <view class="comment-name">
+                <image src="{{item.url}}"></image>
+                 <text>{{item.name}}:</text>
+                 <text>{{item.content}}</text>
+                </view>
+              </block>
+          </block>
+         </view>
+        </block>
+       </view>
+    
+   </view>
+
+   </block>
+ </scroll-view> 
+      <view class="posts" bindtap="post">
+      <image src="../../images/plus.png"></image>
+      </view>
+
+      <view class="fresh" bindtap="fresh">
+      <image src="../../images/resh.png"></image>
+      </view>
+
+
+
+
+</view>

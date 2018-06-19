@@ -1,0 +1,27 @@
+<!--pages/about/about.wxml-->
+<import src="../../templates/footer.wxml" />
+<view class="container about">
+    <view>
+        <view class="logo">
+            <image src="../../images/logo.png"></image>
+            <view class="version">
+                <text>熙然黑胡桃{{version}}</text>
+            </view>
+        </view>
+        <view class="intro">
+            <text>买黑胡桃 到熙然木业</text>
+            <text>美国黑胡桃原材料一站式源头供应商</text>
+            
+            <text>熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城熙然黑胡桃商城小程序商城。</text>
+        </view>
+    </view>
+</view>
+
+<!-- <view class="copyright">
+    <text>Copyright © 2016-2018 熙然木业</text>
+    <text>All Rights Reserved.</text>
+</view> -->
+
+   <view class="copyright" style="display:{{floatDisplay}}">
+      <template is="tempCopyright" />
+    </view>

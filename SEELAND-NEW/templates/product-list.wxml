@@ -1,0 +1,44 @@
+<!--templates/product-list.wxml-->
+<import src="product-price.wxml" />
+
+<template name="product-list">
+
+    <view class="product-list">
+    
+        <block wx:for="{{products}}">     
+      <!--   <block wx:if="{{item.type != 'variable' && item.in_stock}}"> 
+ -->
+            <view class="product">           
+
+                <view data-id="{{item.id}}" data-name="{{item.name}}" bindtap="goProductDetail">
+
+                    <view class="product-image-wrapper">
+                        <image mode="widthFix" class="product-image" src="{{item.images[0].shop_single}}"></image>
+                        <block wx:if="{{item.type != 'variable' && ! item.in_stock}}">
+                            <text class="outstock">缺货</text>
+                        </block>
+                        <block wx:elif="{{item.on_sale}}">
+                            <text class="onsale">促销</text>
+                        </block>
+                    </view>
+
+                    <view class="product-detail">
+                        <text class="product-title">{{item.name}}</text>
+                        <view class="dimension_fonts">
+                        <text>尺寸(m): {{item.dimensions.length}}*{{item.dimensions.width}}*{{item.dimensions.height}} </text>      
+                        </view>
+                        <template is="product-price" data="{{product: item, currency: currency}}"></template>
+                    </view>
+
+                </view>
+
+                <view class="cart">
+                    <button class="add-to-cart" size="mini" data-id="{{item.id}}" data-name="{{item.name}}" data-type="{{item.type}}" data-in-stock="{{item.in_stock}}" bindtap="addToCart">{{item.type == 'variable' ? '选择选项' : '加入购物车'}}</button>
+                </view>
+
+            </view>
+         <!--  </block> -->
+        </block>
+       
+    </view>
+</template>

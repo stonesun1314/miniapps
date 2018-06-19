@@ -1,0 +1,191 @@
+
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+} 
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.dec{
+  margin-top: 50rpx;
+}
+
+.dec-text{
+   font-size: 25rpx; 
+  color: #757575;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  
+}
+.log-items
+{
+  margin-top: 20rpx;
+}
+.log-text {
+  margin: 20rpx;
+  font-size: 30rpx; 
+  color: #757575;
+  text-align: left;
+  
+
+
+}
+
+/*button*/  
+.btn {  
+  width: 30%;  
+  padding: 10rpx 0;  
+   
+  margin-top: 40rpx;  
+  border-left: 10rpx!important;
+  border-top: 1px solid #f4b300 !important;
+  border-right: 1px solid #f4b30!important;
+  border-bottom: 1px solid #f4b30 !important;
+  border-bottom-left-radius: 60px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  background-color: #f4b127!important;
+  color: #fff !important; 
+  text-align: center;
+  font-size:28rpx;
+  font-weight: bold;
+
+}  
+
+  
+/*mask*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+
+/*content*/  
+.drawer_box {  
+  width: 650rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 40%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 5px;  
+  
+}  
+  
+.drawer_title{  
+  padding:15px;  
+  font: 30rpx "microsoft yahei";  
+  font-weight: bold;
+  text-align: center;  
+  border-bottom: 1px solid #E8E8EA; 
+  color: #21759b;  
+}  
+.drawer_content {  
+  height: 310px;  
+  overflow-y: scroll;
+  text-align: center;  
+   /*超出父盒子高度可滚动*/  
+}  
+  
+.btn_ok{  
+  padding: 10px;  
+  font: 30rpx "microsoft yahei"; 
+  font-weight: bold; 
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #21759b;  
+}  
+  
+.top{  
+    padding-top:2px;  
+}  
+.bottom {  
+    padding-bottom:2px;  
+}  
+.title {  
+    height: 30px;  
+    line-height: 30px;  
+    width: 650rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/14px "microsoft yahei";  
+   /* border-bottom: 1px solid #E8E8EA;  */
+}  
+  
+
+radio{  
+    margin-right: 20px;  
+}  
+.grid { display: -webkit-box; display: box; }  
+.col-0 {-webkit-box-flex:0;box-flex:0;}  
+.col-1 {-webkit-box-flex:1;box-flex:1;}  
+.fl { float: left;}  
+.fr { float: right;}  
+
+
+
+.btn-contact {
+  border: none;
+  /*background-color: #000;*/
+  background-color:#f4b127!important;
+  font-size: 28rpx!important;
+  color: #fff;
+  margin-top: 0px;
+}
+.btn-contact::after {
+  border: none;
+}
+.btn-contact-hover {
+  background-color: #ddd !important;
+}
+
+.widget_arrow{
+    margin-top: 10rpx;
+    margin-left: 4rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+
+.log-items-pics{
+width: 100%;
+margin-top:16rpx;
+margin-bottom:2rpx;
+border-radius:3%; 
+opacity:1.0; 
+box-shadow:4rpx 4rpx 20rpx #AAA;
+/*text-align:right;*/
+}

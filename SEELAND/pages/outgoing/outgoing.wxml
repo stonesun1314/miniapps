@@ -1,0 +1,9 @@
+<!--/*
+ * 
+ * WordPres版微信小程序
+ * 
+ */-->
+<import src="../../templates/footer.wxml" />
+<!-- wxml -->
+<!-- 指向微信公众平台首页的web-view -->
+<web-view src="https://www.seeland-wood.com/shop"></web-view>

@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/about/about",
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/page/page",
+    "pages/list/list",
+    "pages/outgoing/outgoing",
+    "pages/readlog/readlog"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#21759b",
+    "navigationBarTitleText":"熙然黑胡桃",
+    "navigationBarTextStyle":"#fff",
+		"onReachBottomDistance": 0
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#21759b",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/cart_light.png",
+        "selectedIconPath": "images/cart_fill_light.png",
+        "text": "产品"
+      },
+       {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/fujin.png",
+        "selectedIconPath": "images/fujins.png",
+        "text": "关于熙然"
+      },
+      
+      {
+        "pagePath": "pages/readlog/readlog",
+        "iconPath": "images/my_light.png",
+        "selectedIconPath": "images/my_fill_light.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
