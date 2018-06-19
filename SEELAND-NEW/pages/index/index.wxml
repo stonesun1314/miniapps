@@ -48,6 +48,96 @@
     </button>
     <!-- 最新产品结束 -->
 
+  <!-- 侧滑菜单-->
+  <view class="slide-mask" style="display:{{maskDisplay}}" bindtap="slideCloseEvent"></view>
+  <view class="slide-menu" style="right: {{slideRight}}px;width: {{slideWidth}}px;height:{{slideHeight}}px;" animation="{{slideAnimation}}">
+    <scroll-view scroll-y="true" style="height:100%;width:100%">
+      <view class="header">
+        <label bindtap="makePhoneCall">
+          <text class="banner-text">买黑胡桃 到熙然木业\n </text>
+          <text>美国黑胡桃原材料一站式源头供应商\n</text>
+          <image src="../../images/telephone.png" style="width:5%;margin-top:8px;margin-bottom:1px;margin-right:3px;" mode="widthFix"></image>
+          <text class="banner-text">0769-8307 7775</text>
+        </label>
+        <view class="toolbar">
+         
+        </view>
+        <icon type="cancel" size="34" class="close-btn" color="#FFF" bindtap="slideCloseEvent" />
+      </view>
+      <view >
+ 
+ 
+
+
+
+      </view>
+       
+      <view class="slide-inner">
+        <view class="filter-list-item-desc">
+        <text class="top-filter-count">请往上拉，直到看到“筛选”按钮\n</text>
+          <text>长度 Length(mm):\n</text>
+          <checkbox-group bindchange="lengthcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsL}}" wx:key="key">
+              <checkbox id="lengthCheckBox" value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+
+          <text>\n</text>
+          <text>宽度 Width(mm):\n</text>
+          <checkbox-group bindchange="widthcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsW}}" wx:key="key">
+              <checkbox id="widthCheckBox" value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>厚度 Thickness(mm):\n</text>
+          <checkbox-group bindchange="heightcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsH}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked?true:false}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>类型 Modeling:\n</text>
+          <checkbox-group bindchange="modelingcheckboxChange">
+            <label class="checkbox" wx:for="{{itemsM}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <text>\n</text>
+          <text>板面 Pattern:\n</text>
+          <checkbox-group bindchange="patterncheckboxChange">
+            <label class="checkbox" wx:for="{{itemsP}}" wx:key="key">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+              <text style="margin-right:20rpx;">{{item.title}}</text>
+            </label>
+          </checkbox-group>
+          <!--<text>\n</text>
+          <button class="button-font" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="primary">清空</button>-->
+          <text>\n</text>
+          <button class="button-font" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="fliterClick">筛选</button>
+          <text>\n</text>
+          <text>\n</text>
+          
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <!-- 侧滑菜单  -->
+  
+
+
     <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
     <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 </view>
+
+
+
+      <!--加载态-->
+  <view class="float-action" bindtap="ballClickEvent" style="opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent">
+    <text class="float-menuball-font">筛选</text>
+  </view>
